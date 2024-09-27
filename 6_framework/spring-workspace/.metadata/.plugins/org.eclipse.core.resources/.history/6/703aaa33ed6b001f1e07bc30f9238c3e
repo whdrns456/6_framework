@@ -1,0 +1,19 @@
+package com.kh.spring.member.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller // Controller 어노테이션 추가 시 빈 스캐닝 통해 자동으로 빈 등록이 됨 
+@RequestMapping("/member")
+public class MemberController {
+
+	
+	@RequestMapping("/member/login") // RequestMapping 어노테이션 추가 시 HandlerMapping 등록(url 주소 작성)
+	public void loginMember(){
+		System.out.println("로그인요청성공");
+	}
+	
+	// @RequestMapping("/member/logout")
+	
+	
+}

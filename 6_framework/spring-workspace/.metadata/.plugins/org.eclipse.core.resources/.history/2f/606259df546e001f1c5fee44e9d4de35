@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+<!-- namespace : 매퍼파일 식별자 -->
+	
+	<resultMap type="Member" id="memberResultMap">
+		<result column="USER_ID" property="userId"/>
+		<result column="USER_PWD" property="userPwd"/>
+		<result column="USER_NAME" property="userName"/>
+		<result column="email" property="email"/>
+		<result column="gender" property="gender"/>
+		<result column="age" property="age"/>
+		<result column="phone" property="phone"/>
+		<result column="address" property="address"/>
+		<result column="ENROLL_DATE" property="enrollDate"/>
+		<result column="MODIFY_DATE" property="modifyDate"/>
+		<result column="STATUS" property="status"/>
+	</resultMap>
+	
+	
+	<select id="loginMember" resultMap="memberResultMap">
+			SELECT * 
+			FROM MEMBER 
+			WHERE USER_ID = #{userId}
+				AND USER_PWD = #{userPwd}
+				AND STATUS = 'Y'
+	</select>
+	
+	<insert id="insertMember">
+		INSERT INTO 
+		MEMBER(
+		USER_ID,
+		USER_PWD,
+		USER_NAME,
+		email,
+		age,
+		phone,
+		address,
+		gender
+
+		) 
+		VALUES(
+			#{userId},
+			#{userPwd},
+			#{userName},
+			#{email},
+			#{age},
+			#{phone},
+			#{address},
+			#{gender}
+		)
+		
+	</insert>
+
+
+</mapper>

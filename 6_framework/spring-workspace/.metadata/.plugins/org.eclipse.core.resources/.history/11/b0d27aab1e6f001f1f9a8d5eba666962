@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<!--
+	 settings MyBatis의 동작 방식을 설정하는 요소이다
+	 jdbcTypeForNull : MyBatis에서 NULL 값을 처리할 때 사용하는 
+	 JDBC 타입을 설정하는 요소이다 
+	 
+	 value= "NULL" : 대문자로 작성할 것  
+	 데이버테이스에서 NULL값을 처리할 때 이 설정에 따라 타입을 적용한다
+	 -->
+	 
+	<!-- environments, dataSource에 작성했던 DB 연결 관련 설정 
+		root-context.xml 파일에 작성할 것임 
+		
+		DB 연결(등록) 설정은 서버 연동과 동시에 같이 이루어져야 하기 떄문에 
+		서버 시작 시 함께 바로 읽혀지는 root-context.xml에 작성 
+	-->
+	<typeAliases>
+				<typeAlias alias="Member" type="com.kh.spring.member.model.vo.Member"/>
+	</typeAliases>
+	
+	<!--
+	 typeAliases : MyBatis에서 자바 클래스의 별칭을 정의하는 부분 
+	 alias="Member" 
+	 com.kh.spring.member.model.vo.Member 클래스에 대해 
+	 사용할 별칭	
+	 -->
+	<mappers>
+		<mapper resource="/mappers/member-mapper.xml"/>
+	</mappers>
+	
+	<!-- 
+	MyBatis에서 SQL 매퍼 파일을 등록하는 요소이다 
+	resource= 매퍼 파일의 경로를 지정한다. 
+	 -->
+</configuration>

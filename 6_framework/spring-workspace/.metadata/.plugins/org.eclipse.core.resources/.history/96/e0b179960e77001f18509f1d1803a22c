@@ -1,0 +1,17 @@
+package com.kh.spring.common.intercetor;
+
+import org.springframework.web.servlet.HandlerInterceptor;
+
+public class LoginInterceptor implements HandlerInterceptor{
+	/*
+	 *  Interceptor
+	 *  - 요청 url에 해당하는 controller가 실행되기 전에 또는 후에 처리할 내용을 작성 
+	 *  - 로그인 유/무 판단, 회원의 권한 체크 등 처리 
+	 *  
+	 *  * preHandle : DispatcherServlet이 Controller를 호출하기 전 처리하는 영역(전처리)
+	 *  * postHandle : Controller 처리 후 DispatcherServlet으로 view(화면) 정보를 처리하는 순간 처리하는 영역
+	 *  
+	 */
+	
+	
+}

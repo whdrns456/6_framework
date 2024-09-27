@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+  
+  <select id="selectCount" resultType="_int">
+  	SELECT COUNT(*) FROM BOARD
+  	WHERE STATUS = 'Y'
+  </select>
+  
+  <resultMap type="Board" id="boardResultSet">
+  		<result column="board_no" property="boardNo"/>
+  		<result column="BOARD_TITLE" property="boardTitle"/>
+  		<result column="BOARD_WRITER" property="boardWriter"/>
+  		<result column="BOARD_CONTENT" property="boardContent"/>
+  		<result column="ORIGIN_NAME" property="originName"/>
+  		<result column="CHANGE_NAME" property="changeName"/>
+  		<result column="COUNT" property="count"/>
+  		<result column="CREATE_DATE" property="createDate"/>
+  		<result column="STATUS" property="status"/>
+  		<result column="BOARD_CONTENT" property="boardContent"/>
+  </resultMap>
+  
+  <select id="selectList" resultMap="boardResultSet">
+  			SELECT
+			BOARD_NO,
+			BOARD_TITLE,
+			BOARD_WRITER,
+			ORIGIN_NAME,
+			CHANGE_NAME,
+			COUNT,
+			TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') "CREATE_DATE"
+			FROM BOARD
+			WHERE STATUS = 'Y'
+			ORDER BY BOARD_NO DESC 
+  </select>
+  
+  <insert id="insertBoard">
+  		INSERT INTO BOARD(
+  		BOARD_NO,
+  		BOARD_TITLE,
+  		BOARD_WRITER,
+  		ORIGIN_NAME,
+  		CHANGE_NAME,
+  		BOARD_CONTENT
+  		)
+  		VALUES(
+  		SEQ_BNO.NEXTVAL,
+  		#{boardTitle},
+  		#{boardWriter},
+  		#{originName},
+  		#{changeName},
+  		#{boardContent}
+  		)
+ 	</insert>
+ 	
+ 	<update id="increaseCount">
+ 			UPDATE BOARD
+ 			SET COUNT = COUNT + 1
+ 			WHERE board_no = #{boardNo} AND STATUS = 'Y'
+ 	</update>
+ 	
+ 	<select id="selectBoard" resultMap="boardResultSet">
+ 			SELECT 
+ 			BOARD_NO,
+  			BOARD_TITLE,
+  			BOARD_WRITER,
+  			TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') "CREATE_DATE",
+  			ORIGIN_NAME,
+  			CHANGE_NAME,
+  			BOARD_CONTENT
+  			FROM BOARD 
+  			WHERE board_no = #{boardNo} AND STATUS = 'Y'
+ 	</select>
+ 	
+ 	<update id="updateBoard">
+ 		UPDATE BOARD
+ 		SET BOARD_TITLE = #{boardTitle},
+ 		ORIGIN_NAME = #{boardTitle},
+		CHANGE_NAME = #{changeName},
+		BOARD_CONTENT = #{boardContent}
+		WHERE board_no = #{boardNo}
+ 	</update>
+ 	
+ 	
+ 	
+</mapper>

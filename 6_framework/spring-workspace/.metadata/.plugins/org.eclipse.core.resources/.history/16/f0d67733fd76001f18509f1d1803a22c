@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<jsp:include page="common/header.jsp"/>
+		
+		<div style="height: 600px;">
+		    <table id="boardList" class="table table-hover" align="center">
+                <thead>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>조회수</th>
+                    <th>작성일</th>
+                    <th>첨부파일</th>
+                </thead>
+                
+
+                <tbody>
+                	<c:forEach var="list1" items="${list}">
+                	   <tr>
+                        <td class="bno">${list1.boardNo}</td>
+                        
+                        <td>${list1.boardTitle}</td>
+                        <td>${list1.boardWriter}</td>
+                        <td>${list1.count}</td>
+                        <td>${list1.createDate}</td>
+                        <td>
+                       	<c:if test="${ not empty list1.originName}">■</c:if>		 
+                        </td>
+                    </tr>
+                </c:forEach>       
+                </tbody>
+            </table>
+		</div>
+		<jsp:include page="common/footer.jsp"/>
+</body>
+</html>

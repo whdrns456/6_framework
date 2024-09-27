@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.catalina.loader.ResourceEntry"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Member"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.model.dao.MemberDao"/>
+    <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.tribes.membership.MemberImpl"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.service.MemberServiceImpl"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.template.MybatisTemplate"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+</qualifiedTypeNameHistroy>

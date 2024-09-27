@@ -1,0 +1,18 @@
+package com.kh.spring.board.controller;
+
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicBean1;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+
+	
+	@RequestMapping("/list")
+	public String boardList(){
+		
+		return "board/boardList";
+	}
+	
+}
